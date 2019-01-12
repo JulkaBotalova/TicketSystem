@@ -47,6 +47,7 @@
 	font-size: 12pt;
    }
   </style>
+    <script src="jquery.js"></script>
 </head>
 <body>
 <h1  align="center" style="color:Black"> Система заказа билетов на междугородние автобусные рейсы</h1>
@@ -66,7 +67,7 @@
         <tr>
             <td><label>Выберите направление:</label></td>
             <td>
-                <select name="direction">
+                <select id="direction-select" name="direction">
 
                 </select>
                 <div class="select-arrow"></div>
@@ -81,6 +82,28 @@
 
 </form>
 <label align="align" style="color:#696969">*В день отправления предъявите на кассе вокзала свой паспорт, чтоб идентифицировать вашу личность. При успешной идентификации Вам выдадут билет.</label>
+
+<script>
+    var $directionSelect = $('#direction-select');
+    $.ajax({
+        url: window.location.origin + '/api/directions',
+        method: 'GET'
+    })
+        .then(function(data) {
+            if (Array.isArray(data)) {
+                data
+                    .forEach(function(direction) {
+                        var option = new Option(direction.directionName, direction.directionId);
+                        $directionSelect.append(option);
+                    });
+            } else {
+                console.log('Ошибка при получении списка направлений: (не список)')
+            }
+        })
+        .fail(function(error) {
+            console.log('Ошибка при получении списка направлений');
+        });
+</script>
 
 </body>
 </html>
