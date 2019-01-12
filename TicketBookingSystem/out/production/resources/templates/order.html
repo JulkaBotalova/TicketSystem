@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Система заказа билетов</title>
+    <style>
+   H1 {
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333366;
+   }
+  </style>
+    <style>
+   label {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	color:#696969"
+   }
+  </style>
+    <style>
+
+   H3 {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    align="left";
+	color:#333366;
+   }
+  </style>
+    <style>
+
+   H6 {
+    font-size: 90%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color:#696969"
+   }
+  </style>
+    <style type="text/css">
+   button.new {
+   align=center;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+    padding: 20px 27px;
+    color: #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666;
+	background: #FFFFE0; /* фон кнопки */
+	font-size: 12pt;
+   }
+  </style>
+</head>
+<body>
+<h1  align="center" style="color:Black"> Система заказа билетов на междугородние автобусные рейсы</h1>
+
+<form name="htmlpage" action="/orderYes">
+    <table>
+        <tr>
+            <td><label>Введите ФИО:</label></td>
+            <td><input type="text" name="fio"></td>
+        </tr>
+
+        <tr>
+            <td><label>Выберите дату:</label></td>
+            <td><input type="text" name="date"></td>
+        </tr>
+
+        <tr>
+            <td><label>Выберите направление:</label></td>
+            <td>
+                <select name="direction">
+
+                </select>
+                <div class="select-arrow"></div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type='submit' value="Заказать"></td>
+        </tr>
+
+    </table>
+
+</form>
+<label align="align" style="color:#696969">*В день отправления предъявите на кассе вокзала свой паспорт, чтоб идентифицировать вашу личность. При успешной идентификации Вам выдадут билет.</label>
+
+</body>
+</html>
