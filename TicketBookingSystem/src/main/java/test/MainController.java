@@ -68,10 +68,4 @@ public class MainController {
 
         return ticketCreate;
     }
-
-    @RequestMapping
-    public ModelAndView index() {
-        return new ModelAndView("site/index", Collections.singletonMap("directions", directionRepository.findAll()));
-    }
-
 }
